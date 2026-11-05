@@ -1,10 +1,18 @@
 <p align="center">
+  <a href="https://adnansupportdesk-rag.streamlit.app/">
+    <img src="https://img.shields.io/badge/Live_Demo-Open_App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Open the live demo">
+  </a>
+</p>
+
+<p align="center">
   <img src="docs/demo.gif" alt="SupportDesk RAG demo" width="100%">
 </p>
 
 # SupportDesk RAG
 
 Customer support answers grounded in your own documents, with cited sources.
+
+**Live demo:** [adnansupportdesk-rag.streamlit.app](https://adnansupportdesk-rag.streamlit.app/)
 
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.66-FF4B4B?logo=streamlit&logoColor=white)
