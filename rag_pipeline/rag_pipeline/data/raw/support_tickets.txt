@@ -1,0 +1,24 @@
+Customer: I was charged twice for the same order #ORD-8821. Can you help?
+Agent: I'm sorry to hear that. Please provide a screenshot of both charges and I'll escalate this to our billing team.
+Customer: Here are the screenshots. Both charges are for $49.99 on the same day.
+Agent: Thank you. I've filed a billing dispute for order ORD-8821. Our team will investigate within 10 business days and issue a refund for the duplicate charge if confirmed.
+
+Customer: How long does it take to get a refund for a returned item?
+Agent: Refunds are processed within 5-7 business days once we receive the returned item. The funds will appear on your original payment method.
+Customer: Do I need to pay for return shipping?
+Agent: Return shipping is free if the item is defective. Otherwise, the customer covers return shipping costs unless the order was over $50, in which case standard return shipping is covered.
+
+Customer: I forgot my password and the reset email isn't arriving.
+Agent: Please check your spam folder first. If it's not there, the reset link may have expired (links are valid for 1 hour). You can request a new reset link from the login page.
+Customer: I requested a new one 10 minutes ago and still nothing.
+Agent: In that case, please contact support directly so we can verify your email address on file and manually assist with the reset.
+
+Customer: Can I delete my account and all my data?
+Agent: Yes, you can delete your account from Settings > Privacy > Delete Account. Personal data is removed within 30 days, though order history is kept for tax purposes.
+Customer: Will I be able to reactivate it later?
+Agent: No, account deletion is permanent and cannot be undone. You would need to create a new account.
+
+Customer: When will my package arrive? I ordered standard shipping 4 days ago.
+Agent: Standard shipping takes 3-5 business days within the continental US. Since it's been 4 days, your package should arrive within the next 1-2 days. Do you have your order number so I can check tracking?
+Customer: Order #SHIP-5541.
+Agent: Let me look that up for you...

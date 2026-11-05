@@ -1,0 +1,57 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+build/
+dist/
+wheels/
+*.egg-info/
+.eggs/
+develop-eggs/
+sdist/
+*.egg
+*.so
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Streamlit secrets (config.toml stays tracked)
+.streamlit/secrets.toml
+
+# Generated data / vector store
+data/processed/
+chroma_db/
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.ipynb_checkpoints/
+.cache/
+
+# Local OpenCode tooling (skills, node_modules, package files)
+.opencode/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

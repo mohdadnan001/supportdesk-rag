@@ -1,0 +1,24 @@
+Product: Wireless Noise-Cancelling Headphones
+Issue: Customer reports that the left earbud stops working after 2 hours of use.
+Resolution: Troubleshoot by resetting the device (hold power button for 10 seconds). If issue persists, offer replacement under 1-year warranty.
+Status: Resolved
+
+Product: Smart Watch Series 5
+Issue: Battery drains within 4 hours instead of advertised 2 days.
+Resolution: Advise customer to disable always-on display and reduce notification frequency. Offer battery optimization guide.
+Status: Open
+
+Product: Bluetooth Speaker
+Issue: Device will not pair with iPhone running iOS 17.
+Resolution: Clear Bluetooth cache on phone, reset speaker by holding power and volume down simultaneously for 5 seconds, then retry pairing.
+Status: Resolved
+
+Product: Laptop Backpack
+Issue: Zipper broke after 3 weeks of use.
+Resolution: Eligible for refund or replacement under 90-day return policy. Customer requested replacement. Shipping label emailed.
+Status: Resolved
+
+Product: USB-C Hub
+Issue: HDMI port not outputting to external monitor.
+Resolution: Confirm monitor input source, update laptop graphics drivers, test with different HDMI cable. If still failing, process warranty claim.
+Status: In Progress

@@ -1,0 +1,4 @@
+[tool.uv.workspace]
+members = [
+    "rag_pipeline/rag_pipeline",
+]

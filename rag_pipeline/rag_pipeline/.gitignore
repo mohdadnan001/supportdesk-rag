@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+lib/
+lib64/
+var/
+sdist/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Streamlit secrets (config.toml stays tracked)
+.streamlit/secrets.toml
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.ipynb_checkpoints/
+.cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# RAG generated data (vector store, processing output)
+data/processed/
+chroma_db/
