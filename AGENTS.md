@@ -45,7 +45,8 @@ rag_pipeline/rag_pipeline/          # Python package root
 ## Gotchas
 
 - **ChromaDB persistence**: `data/processed/chroma_db/` persists between runs. If you change the embedding model or documents, delete this directory before re-ingesting, otherwise old embeddings persist.
-- **Relative paths**: `app.py` resolves `data/raw` relative to its own file location via `Path(__file__).parent / "data" / "raw"`. `main.py` and `pipeline.py` use relative `data/raw` — run from `rag_pipeline/rag_pipeline/`. `VECTOR_DB_PATH` is also relative by default, so running from the repo root creates a stray `RAG/data/processed/chroma_db`.
+- **Relative paths**: `app.py` resolves `data/raw` relative to its own file location via `Path(__file__).parent / "data" / "raw"`. `main.py` and `pipeline.py` use relative `data/raw` — run from `rag_pipeline/rag_pipeline/`. `VECTOR_DB_PATH` defaults to an absolute project path; a relative override resolves against the current working directory.
+- **Streamlit Cloud**: `app.py` reads `GROQ_API_KEY` from `st.secrets` and caches the pipeline with `st.cache_resource` (one Chroma client per process).
 - **Groq model**: `generator.py` uses `openai/gpt-oss-120b`. If Groq returns `model_not_found`, check https://console.groq.com/docs/models for current model names.
 - **No OpenAI dependency**: generation uses Groq via the `groq` package. `Generator` falls back to a template if `GROQ_API_KEY` is not set.
 - **No tests/lint/typecheck configured**: `pyproject.toml` has no lint or test tooling.

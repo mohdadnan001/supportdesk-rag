@@ -1,14 +1,29 @@
-import streamlit as st
+import os
 from pathlib import Path
-from rag_pipeline import RAGPipeline
 
-DATA_DIR = str(Path(__file__).parent / "data" / "raw")
+import streamlit as st
 
 st.set_page_config(
     page_title="SupportDesk RAG",
     page_icon=":material/support_agent:",
     layout="wide",
 )
+
+try:
+    _secret_groq_key = st.secrets.get("GROQ_API_KEY")
+except Exception:
+    _secret_groq_key = None
+if _secret_groq_key and not os.getenv("GROQ_API_KEY"):
+    os.environ["GROQ_API_KEY"] = str(_secret_groq_key)
+
+from rag_pipeline import RAGPipeline
+
+DATA_DIR = str(Path(__file__).parent / "data" / "raw")
+
+
+@st.cache_resource
+def get_pipeline() -> RAGPipeline:
+    return RAGPipeline()
 
 st.markdown(
     """
@@ -121,8 +136,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-if "pipeline" not in st.session_state:
-    st.session_state.pipeline = RAGPipeline()
 if "ingested" not in st.session_state:
     st.session_state.ingested = False
 if "chunk_count" not in st.session_state:
@@ -132,7 +145,7 @@ if "last_result" not in st.session_state:
 if "last_question" not in st.session_state:
     st.session_state.last_question = ""
 
-pipeline: RAGPipeline = st.session_state.pipeline
+pipeline = get_pipeline()
 
 st.markdown(
     """

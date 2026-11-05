@@ -130,6 +130,20 @@ Example questions:
 - Why was I charged twice?
 - My app keeps crashing. What should I check?
 
+## Deploy on Streamlit Community Cloud
+
+1. Push this repository to GitHub.
+2. Go to [share.streamlit.io](https://share.streamlit.io), create a new app, and select
+   this repository with entrypoint `rag_pipeline/rag_pipeline/app.py`.
+3. In **Advanced settings**, choose Python 3.12 (recommended) and add your secret:
+
+   ```toml
+   GROQ_API_KEY = "gsk_your_actual_key_here"
+   ```
+
+4. Deploy. The app reads `GROQ_API_KEY` from Streamlit secrets, so no `.env` file is needed.
+   The Cloud filesystem is ephemeral, so re-ingest after a reboot.
+
 ## Configuration
 
 Settings are read from environment variables (see `.env.example`).
@@ -141,8 +155,8 @@ Settings are read from environment variables (see `.env.example`).
 | `CHUNK_OVERLAP` | `50` | Overlap between chunks |
 | `TOP_K` | `3` | Chunks retrieved per question |
 | `COLLECTION_NAME` | `rag_documents` | ChromaDB collection name |
-| `VECTOR_DB_PATH` | `./data/processed/chroma_db` | Local vector store path |
-| `GROQ_API_KEY` | unset | Enables Groq generation |
+| `VECTOR_DB_PATH` | `<project>/data/processed/chroma_db` | Local vector store path |
+| `GROQ_API_KEY` | unset | Enables Groq generation (or set as a Streamlit secret) |
 
 ## Project structure
 
@@ -186,8 +200,9 @@ the current contents of `data/raw`.
 
 ## Notes
 
-- Run commands from `rag_pipeline/rag_pipeline/`. `VECTOR_DB_PATH` is relative by default,
-  so running from the repository root creates a stray `data/processed/chroma_db` there.
+- Run commands from `rag_pipeline/rag_pipeline/`. The vector store defaults to an absolute
+  path inside the project; a relative `VECTOR_DB_PATH` override resolves against the current
+  working directory.
 - If you change the embedding model, delete `data/processed/chroma_db` before re-ingesting.
 - `.env` and `data/processed/` are gitignored; never commit your API key.
 - There is no OpenAI dependency; generation uses the `groq` package.

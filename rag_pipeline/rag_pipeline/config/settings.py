@@ -1,7 +1,11 @@
 import os
+from pathlib import Path
+
 from dotenv import load_dotenv
 
 load_dotenv()
+
+_PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 class Settings:
@@ -10,7 +14,10 @@ class Settings:
     CHUNK_OVERLAP: int = int(os.getenv("CHUNK_OVERLAP", "50"))
     TOP_K: int = int(os.getenv("TOP_K", "3"))
     COLLECTION_NAME: str = os.getenv("COLLECTION_NAME", "rag_documents")
-    VECTOR_DB_PATH: str = os.getenv("VECTOR_DB_PATH", "./data/processed/chroma_db")
+    VECTOR_DB_PATH: str = os.getenv(
+        "VECTOR_DB_PATH",
+        str(_PROJECT_ROOT / "data" / "processed" / "chroma_db"),
+    )
     GROQ_API_KEY: str | None = os.getenv("GROQ_API_KEY")
 
 

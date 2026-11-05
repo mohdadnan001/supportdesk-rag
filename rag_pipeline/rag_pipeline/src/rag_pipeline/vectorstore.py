@@ -1,8 +1,10 @@
 import os
+import threading
 from typing import List
 
 import chromadb
-from chromadb.config import Settings as ChromaSettings
+
+_CLIENT_LOCK = threading.Lock()
 
 
 class VectorStore:
@@ -11,7 +13,8 @@ class VectorStore:
         self.persist_path = persist_path
         os.makedirs(persist_path, exist_ok=True)
 
-        self.client = chromadb.PersistentClient(path=persist_path)
+        with _CLIENT_LOCK:
+            self.client = chromadb.PersistentClient(path=persist_path)
         self.collection = self.client.get_or_create_collection(name=collection_name)
 
     def reset(self) -> None:
